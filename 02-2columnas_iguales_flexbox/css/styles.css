@@ -1,0 +1,68 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.6rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+.contenedor {
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.entrada-blog a {
+    display: inline-block;
+    background-color: #2196F3;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+/** CODIGO AQUI **/
+
+
+/* simepre se le debe aplicar el display felix o grip al elemento padre para alinear los elementos hijos */
+
+@media (min-width:768px) {
+    .dos-columnas {
+        display: flex;
+        /* los elementos hijos se muestras de izquierda a derehca */
+        justify-content: space-between;
+        /* contenido para alinear de izquierda a derecha */
+        gap: 2rem;
+        /* gap es la nueva sintaxis para la separación pero no lo soporta safari */
+    }
+}
+
+
+/* modos para mostrar los dos elmemntos con separacion en cada columna */
+
+.entrada-blog {
+    flex: 0 0 calc(50% - 1rem)
+    /* flex toma varios valores: factor de crecimiento, factor de pequeño, tamaño base */
+}
+
+.entrada-blog {
+    flex-basis: calc(50% - 1rem);
+}
