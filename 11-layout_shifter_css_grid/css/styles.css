@@ -49,3 +49,37 @@ p {
 
 
 /** CODIGO AQUI **/
+
+@media (min-width: 768px) {
+    .layout-shifter {
+        display: grid;
+        grid-template-areas: "contenido" "interior";
+        /* grid-template-areas: "contenido" "interior"; para definir areas por  de arriba hacia abajo filas se define con las comillas en cada areas*/
+    }
+    .sidebar {
+        grid-area: interior;
+    }
+    .contenido-principal {
+        grid-area: contenido;
+        display: grid;
+        grid-template-areas: "entrada1 entrada2";
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 3rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .layout-shifter {
+        grid-template-areas: "contenido sidebar";
+        column-gap: 2rem;
+        /* grid-template-areas: "contenido sidebar"; para definir areas por izquierda a derecha columnas dentro de las comillas */
+    }
+    .sidebar {
+        grid-area: sidebar;
+    }
+    .contenido-principal {
+        grid-area: contenido;
+        grid-template-areas: "entrada1" "entrada2";
+        grid-template-columns: unset;
+    }
+}

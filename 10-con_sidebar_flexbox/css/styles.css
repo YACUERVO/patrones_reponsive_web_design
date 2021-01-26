@@ -49,3 +49,39 @@ p {
 
 
 /** CODIGO AQUI **/
+
+
+/* primera forma pero recuerda que gap para generar separaciones entre contenido pero no tiene tanto spoorte */
+
+
+/* no es necesario space-between cuando se utiliza el gap */
+
+@media (min-width: 768px) {
+    .con-siderbar {
+        display: flex;
+        gap: 2rem;
+    }
+    aside {
+        flex: 1;
+    }
+    article {
+        flex: 3;
+    }
+}
+
+
+/* segunda forma para generar separaciones entre contenidos  */
+
+@media (min-width: 768px) {
+    .con-siderbar {
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+    aside {
+        flex: 0 0 calc(33.3% - 1rem);
+    }
+    article {
+        flex: 0 0 0 calc(66.6 - 1rem);
+    }
+}

@@ -47,4 +47,41 @@ p {
     text-transform: uppercase;
 }
 
+
 /** CODIGO AQUI **/
+
+@media (min-width: 768px) {
+    .layout-shifter {
+        display: flex;
+        flex-direction: column-reverse;
+        /* flex-direction. La propiedad CSS flex-direction especifica cómo colocar los objetos flexibles en el contenedor flexible definiendo el eje principal y la dirección (normal o al revés). */
+        /*column-reverse. Se comporta igual que column pero los puntos principales de inicio y final son intercambiados. column-reverse */
+    }
+    .contenido-principal {
+        display: flex;
+        justify-content: space-between;
+    }
+    .entrada-blog {
+        flex: 0 0 calc(50% - 2rem);
+    }
+}
+
+@media (min-width: 992px) {
+    .layout-shifter {
+        flex-direction: row;
+        justify-content: space-between;
+        /*row. El eje principal del contenedor flexible está definido para ser el mismo que la dirección del texto. Los puntos principales de inicio y final son los mismos que la dirección del contenido. */
+    }
+    .contenido-principal {
+        flex: 0 0 calc(66.6% - 2rem);
+        flex-wrap: wrap;
+        /* La flex-wrap propiedad especifica si los elementos flexibles deben ajustarse o no. */
+    }
+    .sidebar {
+        order: 2;
+        flex: 0 0 calc(33.3% - 2rem);
+    }
+    .entrada-blog {
+        flex: 0 0 100%;
+    }
+}
